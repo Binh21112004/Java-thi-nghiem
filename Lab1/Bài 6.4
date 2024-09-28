@@ -1,0 +1,52 @@
+import java.util.Scanner;
+
+public class Bai4 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        while (true) {
+            String input_month = sc.next();
+            int y = sc.nextInt();
+            int m = month_to_number(input_month);
+            if (m == -1 || y < 0) {
+                System.out.println("Dữ liệu không hợp lệ, vui lòng nhập lại.");
+            } else {
+                // Xử lý số ngày trong tháng
+                if (m == 1 || m == 3 || m == 5 || m == 7 || m == 8 || m == 10 || m == 12) {
+                    System.out.println("31");
+                } else if (m == 4 || m == 6 || m == 9 || m == 11) {
+                    System.out.println("30");
+                } else if (m == 2) {
+                    // Kiểm tra năm nhuận
+                    if ((y % 4 == 0 && y % 100 != 0) || (y % 400 == 0)) {
+                        System.out.println("29");
+                    } else {
+                        System.out.println("28");
+                    }
+                }
+                break; 
+            }
+        }
+
+        sc.close();
+    }
+
+    
+    public static int month_to_number(String month) {
+        switch (month) {
+            case "1": case "Jan": case "Jan.": return 1;
+            case "2": case "Feb": case "Feb.": return 2;
+            case "3": case "Mar": case "Mar.": return 3;
+            case "4": case "Apr": case "Apr.": return 4;
+            case "5": case "May": return 5;
+            case "6": case "Jun": case "Jun.": return 6;
+            case "7": case "Jul": case "Jul.": return 7;
+            case "8": case "Aug": case "Aug.": return 8;
+            case "9": case "Sep": case "Sept.": return 9;
+            case "10": case "Oct": case "Oct.": return 10;
+            case "11": case "Nov": case "Nov.": return 11;
+            case "12": case "Dec": case "Dec.": return 12;
+            default: return -1; // Tháng không hợp lệ
+        }
+    }
+}
