@@ -1,3 +1,33 @@
 Question 1. 
 Khi người dùng chọn Cancel, màn hình thông báo sẽ hiện ra là người dùng đã chọn NO vì đoạn code chỉ kiểm tra xem tùy chọn có phải là JOptionPane.YES_OPTION hay không, và trong trường hợp không phải, đoạn code mặc định trả về "No".
 Question 2.
+Khi sử dụng JOptionPane để tạo hộp thoại, có thể sử dụng các nút chuẩn (có thể thay đổi) hoặc chỉ định văn bản khác. Theo mặc định, loại khung tùy chọn sẽ xác định số lượng nút xuất hiện. Ví dụ, hộp thoại YES_NO_OPTION có hai nút và hộp thoại YES_NO_CANCEL_OPTION có ba nút.
+
+ví dụ về tạo 1 hộp thoại mới: 
+
+import javax.swing.JOptionPane;
+
+public class CustomizedOptionPane {
+    public static void main(String[] args) {
+        
+        Object[] choices = {"Đồng ý", "Không đồng ý"};
+        
+       
+        int userChoice = JOptionPane.showOptionDialog(
+                null, 
+                "Bạn có muốn tiếp tục?",  // Nội dung câu hỏi
+                "Lựa chọn của bạn",  // Tiêu đề hộp thoại
+                JOptionPane.YES_NO_OPTION,  // Loại hộp thoại
+                JOptionPane.INFORMATION_MESSAGE,  // Loại thông báo 
+                null,  // Không sử dụng icon
+                choices,  // Các lựa chọn tuỳ chỉnh
+                choices[1]);  // Lựa chọn mặc định là "Không đồng ý"
+
+        
+        JOptionPane.showMessageDialog(
+                null, 
+                "Kết quả: " + (userChoice == 0 ? "Đồng ý" : "Không đồng ý"));
+        
+        System.exit(0);  
+    }
+}
