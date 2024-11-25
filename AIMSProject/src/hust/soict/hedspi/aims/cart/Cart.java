@@ -60,7 +60,26 @@ public class Cart {
         return addcount;
     }
     */
-    
+
+      //2.2 Qua tai bang cach thay doi tham so
+    // Function với đầu vào 2 tham số
+     public int addDigitalVideoDisc(DigitalVideoDisc dvd1, DigitalVideoDisc dvd2) {
+        if (qtyOrdered + 2 <= MAX_NUMBERS_ORDERED) { // Nếu có đủ chỗ cho 2 DVD
+            itemsOrdered[qtyOrdered] = dvd1; // Thêm DVD đầu tiên
+            qtyOrdered++;
+            itemsOrdered[qtyOrdered] = dvd2; // Thêm DVD thứ hai
+            qtyOrdered++;
+            System.out.println("Both dvds have been added.");
+        } else if (qtyOrdered + 1 <= MAX_NUMBERS_ORDERED) { // Nếu chỉ có đủ chỗ cho 1 DVD
+            itemsOrdered[qtyOrdered] = dvd1; // Thêm DVD đầu tiên
+            qtyOrdered++;
+            System.out.println("Only dvd1" + " " + dvd1.getTitle() + " " + " has been added.");
+        } else {
+            System.out.println("The cart is full. Can't add more discs.");
+            return 0; // Giỏ hàng đầy
+        }
+        return 1; // Thêm thành công
+    }
     
     // Function xóa đĩa 
     public int removeDigitalVideoDisc(DigitalVideoDisc disc) {
