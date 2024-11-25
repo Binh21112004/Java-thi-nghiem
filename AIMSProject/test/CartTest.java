@@ -19,7 +19,7 @@ public class CartTest {
         DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladin","Animation",18.99f);
         cart.addDigitalVideoDisc(dvd3);
 
-        cart.print();
+
 
         //Test search by ID method
         cart.searchById(3);
