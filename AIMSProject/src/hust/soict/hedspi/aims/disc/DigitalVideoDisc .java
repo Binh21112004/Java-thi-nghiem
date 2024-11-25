@@ -6,12 +6,12 @@ public class DigitalVideoDisc {
     private String director;
     private int length;
     private float cost;
- 
+
      // constructor by title
     public DigitalVideoDisc(String title) {
           super();
         this.title = title;
-   
+
     }
      // constructor by title,category,cost
     public DigitalVideoDisc(String title, String category, float cost) {
@@ -26,7 +26,8 @@ public class DigitalVideoDisc {
         this.category = category;
         this.director = director;
         this.cost = cost;
-  
+
+
     }
      
     // constructor by all attributes
@@ -37,7 +38,7 @@ public class DigitalVideoDisc {
         this.director = director;
         this.length = length;
         this.cost = cost;
-      
+
     }
     
     
@@ -67,7 +68,6 @@ public class DigitalVideoDisc {
     }
     
 
-    
     // 
      public void setTitle(String titleSet){ title = titleSet; }
     public void setCategory(String categorySet){ category = categorySet; }
