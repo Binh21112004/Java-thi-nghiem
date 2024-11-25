@@ -22,44 +22,6 @@ public class Cart {
         }
     }
     
-    // Function thêm đĩa dvd vào giỏ hàng với tham số là 1 mảng
-    
-    public int addDigitalVideoDisc(DigitalVideoDisc [] dvdList){
-        int addcount = 0 ;
-        for (DigitalVideoDisc disc : dvdList){
-            if(qtyOrdered==MAX_NUMBERS_ORDERED){
-                System.out.println("The cart is full. Can't add more disc");
-                break;
-            }
-            else{
-                itemsOrdered[qtyOrdered]=disc;
-                ++qtyOrdered;
-                System.out.println("The disc has been added.");
-                addcount++;
-            }
-        }
-        return addcount;
-    } 
-    
-   // function thêm đĩa dvd vào giỏ hàng với số lượng tùy ý (không chạy chung được với hàm 
-     /*public int addDigitalVideoDisc(DigitalVideoDisc... dvds){
-        int addcount = 0 ;
-        for (DigitalVideoDisc disc : dvds){
-            if(qtyOrdered==MAX_NUMBERS_ORDERED){
-                System.out.println("The cart is full. Can't add more disc");
-                break;
-            }
-            else{
-                itemsOrdered[qtyOrdered]=disc;
-                ++qtyOrdered;
-                System.out.println("The dvd" + " " +disc.getTitle() + " " + " have been added.");
-                addcount++;
-            }
-        }
-        return addcount;
-    }
-    */
-    
     //2.2 Qua tai bang cach thay doi tham so
     // Function với đầu vào 2 tham số
      public int addDigitalVideoDisc(DigitalVideoDisc dvd1, DigitalVideoDisc dvd2) {
@@ -105,40 +67,7 @@ public class Cart {
         return sum;
     }
     
-    public void print() {
-        StringBuilder output = new StringBuilder("*********************CART************************** \nOrdered items: \n");
-        for (int i = 0; i < qtyOrdered;i++) {
-            output.append(i+1 + ".[" + itemsOrdered[i].getTitle() + "] - [" + itemsOrdered[i].getCategory() + "] - ["
-                    + itemsOrdered[i].getDirector() + "] - [" + itemsOrdered[i].getLength() + "]: "
-                    + itemsOrdered[i].getCost() + " $\n");
-        }
-        output.append("total: ").append(totalCost()).append(" $\n");
-        output.append("***************************************************\n");
-        System.out.println(output);
-    }
-    public void searchById(int i) {
-        if(i > qtyOrdered) {
-            System.out.println("No match is found !");
-        } else {
-            System.out.println("Result: " +  "[" + itemsOrdered[i-1].getTitle() +
-                    "] - [" + itemsOrdered[i-1].getCategory() + "] - ["
-                    + itemsOrdered[i-1].getDirector() + "] - ["
-                    + itemsOrdered[i-1].getLength() + "]: " +itemsOrdered[i-1].getCost() + " $\n");
-        }
-
-    }
-
-    public void searchByTitle(String title) {
-        for(int i = 0;i < qtyOrdered; i++) {
-            if(itemsOrdered[i].getTitle().equals(title)) {
-                System.out.println("Result: " +  "[" + itemsOrdered[i].getTitle() +
-                        "] - [" + itemsOrdered[i].getCategory() + "] - ["
-                        + itemsOrdered[i].getDirector() + "] - ["
-                        + itemsOrdered[i].getLength() + "]: " +itemsOrdered[i].getCost() + " $\n");
-                return;
-            }
-        }
-        System.out.println("No match is found !");
+  
     }
 }
 
