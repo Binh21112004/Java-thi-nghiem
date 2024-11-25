@@ -1,0 +1,49 @@
+import java.util.Scanner;
+
+public class Bai6 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("so phan tu cua hang : ");
+        int rows = sc.nextInt();
+        System.out.print("so phan tu cua cot : ");
+        int cols = sc.nextInt();
+
+        
+        int[][] matrixA = new int[rows][cols];
+        int[][] matrixB = new int[rows][cols];
+        int[][] sumMatrix = new int[rows][cols];
+        
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                matrixA[i][j] = sc.nextInt();
+            }
+        }
+
+        
+        
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                matrixB[i][j] = sc.nextInt();
+            }
+        }
+
+      
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                sumMatrix[i][j] = matrixA[i][j] + matrixB[i][j];
+            }
+        }
+
+       
+       
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                System.out.print(sumMatrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+        sc.close();
+    }
+}
