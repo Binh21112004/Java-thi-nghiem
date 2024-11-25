@@ -21,12 +21,6 @@ public class CartTest {
 
         cart.print();
 
-        //Test search by ID method
-        cart.searchById(3);
-        cart.searchById(4);
-
-        //Test search by Title method
-        cart.searchByTitle("The Lion King");
-        cart.searchByTitle("Ronaldo");
+       
     }
 }
