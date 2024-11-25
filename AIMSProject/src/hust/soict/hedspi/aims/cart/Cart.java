@@ -22,6 +22,44 @@ public class Cart {
         }
     }
     
+    // Function thêm đĩa dvd vào giỏ hàng với tham số là 1 mảng
+    
+    public int addDigitalVideoDisc(DigitalVideoDisc [] dvdList){
+        int addcount = 0 ;
+        for (DigitalVideoDisc disc : dvdList){
+            if(qtyOrdered==MAX_NUMBERS_ORDERED){
+                System.out.println("The cart is full. Can't add more disc");
+                break;
+            }
+            else{
+                itemsOrdered[qtyOrdered]=disc;
+                ++qtyOrdered;
+                System.out.println("The disc has been added.");
+                addcount++;
+            }
+        }
+        return addcount;
+    } 
+    
+   // function thêm đĩa dvd vào giỏ hàng với số lượng tùy ý (không chạy chung được với hàm 
+     /*public int addDigitalVideoDisc(DigitalVideoDisc... dvds){
+        int addcount = 0 ;
+        for (DigitalVideoDisc disc : dvds){
+            if(qtyOrdered==MAX_NUMBERS_ORDERED){
+                System.out.println("The cart is full. Can't add more disc");
+                break;
+            }
+            else{
+                itemsOrdered[qtyOrdered]=disc;
+                ++qtyOrdered;
+                System.out.println("The dvd" + " " +disc.getTitle() + " " + " have been added.");
+                addcount++;
+            }
+        }
+        return addcount;
+    }
+    */
+    
     //2.2 Qua tai bang cach thay doi tham so
     // Function với đầu vào 2 tham số
      public int addDigitalVideoDisc(DigitalVideoDisc dvd1, DigitalVideoDisc dvd2) {
@@ -67,7 +105,4 @@ public class Cart {
         return sum;
     }
     
-  
-    }
-}
 
