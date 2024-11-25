@@ -105,17 +105,7 @@ public class Cart {
         return sum;
     }
     
-    public void print() {
-        StringBuilder output = new StringBuilder("*********************CART************************** \nOrdered items: \n");
-        for (int i = 0; i < qtyOrdered;i++) {
-            output.append(i+1 + ".[" + itemsOrdered[i].getTitle() + "] - [" + itemsOrdered[i].getCategory() + "] - ["
-                    + itemsOrdered[i].getDirector() + "] - [" + itemsOrdered[i].getLength() + "]: "
-                    + itemsOrdered[i].getCost() + " $\n");
-        }
-        output.append("total: ").append(totalCost()).append(" $\n");
-        output.append("***************************************************\n");
-        System.out.println(output);
-    }
+  
     public void searchById(int i) {
         if(i > qtyOrdered) {
             System.out.println("No match is found !");
