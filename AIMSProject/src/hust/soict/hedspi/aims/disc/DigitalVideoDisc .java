@@ -7,20 +7,20 @@ public class DigitalVideoDisc {
     private int length;
     private float cost;
     private int id; // Instance attribute ID
-    private static int nbDigitalVideoDiscs = 0; //  khai bao Class attribute 
+  
     
      // constructor by title
     public DigitalVideoDisc(String title) {
           super();
         this.title = title;
-        this.id = ++nbDigitalVideoDiscs; // Update class variable and assign id
+  
     }
      // constructor by title,category,cost
     public DigitalVideoDisc(String title, String category, float cost) {
         this.title = title;
         this.category = category;
         this.cost = cost;
-        this.id = ++nbDigitalVideoDiscs;
+
     }
     // constructor by title, category,director,cost
     public DigitalVideoDisc(String title, String category, String director, float cost) {
@@ -28,7 +28,7 @@ public class DigitalVideoDisc {
         this.category = category;
         this.director = director;
         this.cost = cost;
-        this.id = ++nbDigitalVideoDiscs;
+
     }
      
     // constructor by all attributes
@@ -39,7 +39,6 @@ public class DigitalVideoDisc {
         this.director = director;
         this.length = length;
         this.cost = cost;
-        this.id = ++nbDigitalVideoDiscs;
     }
     
     
@@ -68,10 +67,7 @@ public class DigitalVideoDisc {
         return cost;
     }
     
-    public int getId() { 
-        return id; 
-    } // Ham lay id
-    
+  
     
     // 
      public void setTitle(String titleSet){ title = titleSet; }
