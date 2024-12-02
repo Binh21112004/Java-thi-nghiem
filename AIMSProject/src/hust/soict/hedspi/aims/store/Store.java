@@ -4,34 +4,38 @@ import hust.soict.hedspi.aims.disc.DigitalVideoDisc.DigitalVideoDisc;
 import java.util.LinkedList;
 
 public class Store {
-    private final LinkedList<DigitalVideoDisc> itemsInStore = new LinkedList<>();
 
+    private ArrayList<Media> itemsInStore = new ArrayList<Media>();
 
-    private boolean checkDVD(DigitalVideoDisc disc) {
-        for (DigitalVideoDisc digitalVideoDisc : itemsInStore) {
-            if (digitalVideoDisc.equals(disc)) {
-                return true;
+    public void addMedia(Media media) {
+        if (itemsInStore.contains(media)) {
+            System.out.println("The media " + media.getTitle() + " is already in the store!");
+        } else {
+            itemsInStore.add(media);
+            System.out.println("The media " + media.getTitle() + " has been added to the store.");
+        }
+    }
+    public void removeMedia(Media media) {
+        if (itemsInStore.remove(media)) {
+            System.out.println("The media " + media.getTitle() + " has been removed from the store.");
+        } else {
+            System.out.println("The media " + media.getTitle() + " is not in the store!");
+        }
+    }
+
+    public void print() {
+        if (itemsInStore.size() == 0) {
+            System.out.println("The store is empty!");
+        } else {
+            System.out.println("********************STORE INVENTORY********************");
+            int i = 0;
+            for (Media media : itemsInStore) {
+                i +=1;
+                System.out.println(i +" - " + media);
             }
-        }
-        return false;
-    }
-
-    public void removeDVD(DigitalVideoDisc disc) {
-        if(checkDVD(disc)) {
-            itemsInStore.remove(disc);
-            System.out.println( disc.getTitle() + " has been deleted from the store !");
-        } else {
-            System.out.println("There is no "+ disc.getTitle() + " in the store !");
+            System.out.println("********************************************************");
         }
     }
 
-    public void addDVD(DigitalVideoDisc disc) {
-        if(!checkDVD(disc)) {
-            itemsInStore.add(disc);
-            System.out.println( disc.getTitle() + " has been added to the store !");
-        } else {
-            System.out.println( disc.getTitle() + " 'already exists in the store !");
-        }
 
-    }
 }
