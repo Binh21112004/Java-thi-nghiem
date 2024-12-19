@@ -1,8 +1,10 @@
 
 package hust.soict.hedspi.aims.media;
 
-
+import java.time.Duration;
 import java.util.Comparator;
+
+import hust.soict.hedspi.aims.exception.PlayerException;
 
 public abstract class Media implements Comparable<Media> {
 
@@ -61,7 +63,16 @@ public abstract class Media implements Comparable<Media> {
     public void play() {
         System.out.println("Playing media");
     }
+    
+    public String playGUI() throws PlayerException {
+        return "Playing media";
+    }
 
+    public String formatDuration(int durationInSeconds) {
+        Duration duration = Duration.ofSeconds(durationInSeconds);
+        return String.format("%02d:%02d", duration.toMinutes(), duration.minusMinutes(duration.toMinutes()).getSeconds());
+    }
+    
     @Override
     public boolean equals(Object obj) {
         if (obj == this) {
